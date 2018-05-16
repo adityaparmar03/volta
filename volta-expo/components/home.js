@@ -8,7 +8,7 @@ import * as myactions from '../actions/station';
 class Home extends React.Component {
 
     state = {
-      mapRegion: { latitude: 37.78825, longitude: -122.4324, latitudeDelta: 2.0922, longitudeDelta: 2.0421 },
+      mapRegion: { latitude: 37.78825, longitude: -122.4324, latitudeDelta: 112.0922, longitudeDelta: 112.0421 },
       markers:[
               {
               latitude : 37.78825,
@@ -34,15 +34,12 @@ class Home extends React.Component {
      
    }
    componentWillReceiveProps(nextProps) {
-    console.log("nextProps")
+   
     if (nextProps.stations) {
-      console.log("nextProps.stations")
-       console.log(nextProps.stations)
+      console.log(nextProps.stations)
       this.setState({
        
-
-       
-       
+        markers:nextProps.stations
       
       })
     }
@@ -79,10 +76,10 @@ class Home extends React.Component {
   }
 }
 function mapStateToProps(state){
-  console.log(state)
+
   return{
      
-    stations : state.stations
+    stations : state.stations.stations
      
   }
 }

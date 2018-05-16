@@ -1,7 +1,7 @@
 import {base_url,get_station,STATION_RESULT} from '../constant'
 import axios from 'axios';
 export function getStations(){
-    console.log("action =>>>>>")
+    
     return  dispatch => {
         
         axios.get(base_url+get_station)

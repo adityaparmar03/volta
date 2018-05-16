@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
-import station from './station'
+import stations from './stations'
 
 const rootReducer = combineReducers({
-    station
+    stations
 })
 
 export default rootReducer
