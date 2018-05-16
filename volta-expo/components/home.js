@@ -8,7 +8,7 @@ import * as myactions from '../actions/station';
 class Home extends React.Component {
 
     state = {
-      mapRegion: { latitude: 37.78825, longitude: -122.4324, latitudeDelta: 112.0922, longitudeDelta: 112.0421 },
+      mapRegion: { latitude: 37.78825, longitude: -122.4324, latitudeDelta: 2.0922, longitudeDelta: 2.0421 },
       markers:[
               {
               latitude : 37.78825,
