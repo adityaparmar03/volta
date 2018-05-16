@@ -13,12 +13,12 @@ class Home extends React.Component {
               {
               latitude : 37.78825,
               longitude: -122.4324,
-              title:"Adi",
+              address:"Adi",
               status:"metadata"
       },{
         latitude : 37.38825,
         longitude: -122.1324,
-        title:"Adi",
+        address:"Adi",
         status:"Active"
       }]
     };
@@ -26,7 +26,27 @@ class Home extends React.Component {
     _handleMapRegionChange = mapRegion => {
       this.setState({ mapRegion });
     };
-  
+    componentDidMount() {
+        
+
+      this.props.getStations();
+                          
+     
+   }
+   componentWillReceiveProps(nextProps) {
+    console.log("nextProps")
+    if (nextProps.stations) {
+      console.log("nextProps.stations")
+       console.log(nextProps.stations)
+      this.setState({
+       
+
+       
+       
+      
+      })
+    }
+}
     render() {
     return (
      <MapView
@@ -46,7 +66,7 @@ class Home extends React.Component {
                     longitude: marker.longitude
                 }}
                 title={marker.status}
-                description={marker.title}
+                description={marker.address}
                 image={require('../assets/charging.png')}
 
               />
@@ -59,7 +79,7 @@ class Home extends React.Component {
   }
 }
 function mapStateToProps(state){
-   
+  console.log(state)
   return{
      
     stations : state.stations

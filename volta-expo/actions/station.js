@@ -1,11 +1,12 @@
 import {base_url,get_station,STATION_RESULT} from '../constant'
-
+import axios from 'axios';
 export function getStations(){
+    console.log("action =>>>>>")
     return  dispatch => {
         
         axios.get(base_url+get_station)
           .then(function (response) {
-           console.log(response)
+         
             return dispatch(
                 { 
                     type : STATION_RESULT,
@@ -14,7 +15,7 @@ export function getStations(){
            
           })
           .catch(function (error) {
-            return dispatch({ type : "HOME_ERROR", payload : error } )
+            return dispatch({ type : "STATION_ERROR", payload : error } )
           });
          
      }
